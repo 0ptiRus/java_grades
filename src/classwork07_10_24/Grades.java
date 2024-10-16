@@ -102,6 +102,14 @@ public class Grades {
         Consumer<String> printNumber = val -> { if(val == "Hello, World!") System.out.println("Hello to you too!");};
         printNumber.accept(greetSupplier.get());
 		
+        ArrayList<Integer> grades = Student.stud(5);
+        
+        Student s = new Student("Igor", grades, Student.avg(grades.size(), grades));
+        
+        System.out.println("Is the student failing? - " + s.test(s.getAvg()));
+        
+        s.accept(s);
+        
 		//System.out.println("hello! :D");
 	}
 }

@@ -6,8 +6,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
-public class Student implements Consumer<Student> {
+public class Student implements Consumer<Student>, Predicate<Double> {
 	private String name;
 	private ArrayList<Integer> grades;
 	private double avg;
@@ -78,6 +79,12 @@ public class Student implements Consumer<Student> {
 		}
 
 		
+	}
+
+	@Override
+	public boolean test(Double t) 
+	{
+		return t > 7;
 	}
 	
 	
